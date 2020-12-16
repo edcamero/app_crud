@@ -1,9 +1,8 @@
 package database
 
 import (
-	"app_crud/models"
-
-	"github.com/edcamero/app_crud/backend/database"
+	"github.com/edcamero/app_crud/database"
+	"github.com/edcamero/app_crud/models"
 )
 
 func main() {
