@@ -8,7 +8,7 @@ import (
 	"github.com/kataras/iris/v12"
 )
 
-func AllAlumnos(ctx iris.Context) []models.Alumno{} {
+func ()AllAlumnos(ctx iris.Context) *models.Alumno {
 	alumnos := []models.Alumno{}
 	db := database.GetDatabase()
 	db.Find(&alumnos)
