@@ -1,10 +1,11 @@
 package main
 
 import (
+	"github.com/edcamero/app_crud/database"
 	"github.com/edcamero/app_crud/models"
 )
 
-func database() {
+func main() {
 	db := database.GetDatabase()
 	alumno := models.Alumno{}
 	db.AutoMigrate(&alumno)
