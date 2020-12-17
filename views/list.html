@@ -9,10 +9,11 @@
         <div class="card shadow-lg">
           <div class="card-header text-center">
             <h1><strong>Listar Estudiantes</strong> <i class="fa fa-home fa-lg" ></i> </h1>
-            <a href="index.html">Inicio</a>
+            <a href="/">Inicio</a>
                   </div>
     <table class="table text-center">
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Numero Identificacion</th>
@@ -20,15 +21,17 @@
             <th>Editar</th>
             <th>Borrar</th>
         </tr>
+        {{ range $alumno := .alumnos }}
        <tr>
-       <td>nombre</td>
-       <td>Direccion</td>
-       <td>Numero Identificacion</td>
-       <td>Telefono</td>
-       <td><a href="update" class="btn btn-info btn-responsive btninter btn-red">Editar</a></td>
-       <td><a href="" class="btn btn-info btn-responsive btninter btn-red">Borrar</a></td>
+        <td>{{ $alumno.ID }}</td>
+       <td>{{ $alumno.Nombre }}</td>
+       <td>{{ $alumno.Direccion }}</td>
+       <td>{{ $alumno.Documento }}</td>
+       <td>{{ $alumno.Telefono }}</td>
+       <td><a href="/update?id={{ $alumno.ID}}" class="btn btn-info btn-responsive btninter btn-red">Editar</a></td>
+       <td><a href="/delete?id={{ $alumno.ID}}" class="btn btn-info btn-responsive btninter btn-red">Borrar</a></td>
       </tr>
-    
+      {{ end }}
     </table>
 </div>
 </body>

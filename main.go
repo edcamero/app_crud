@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	Router "github.com/edcamero/app_crud/router"
 	"github.com/kataras/iris/v12"
 )
 
@@ -12,6 +13,7 @@ func main() {
 	if port == "" {
 		port = "8081" //localhost
 	}
+	Router.AddRutas(app)
 
 	tmpl := iris.HTML("./views", ".html")
 
@@ -24,16 +26,6 @@ func main() {
 	app.Get("/", func(ctx iris.Context) {
 		//ctx.ViewData("message", "Crud de estudiante")
 		ctx.View("index.html")
-	})
-	app.Get("/add", func(ctx iris.Context) {
-		ctx.View("add.html")
-	})
-	app.Get("/list", func(ctx iris.Context) {
-		ctx.View("list.html")
-	})
-
-	app.Get("/update", func(ctx iris.Context) {
-		ctx.View("update.html")
 	})
 
 	app.Listen(":" + port)
